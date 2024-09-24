@@ -16,7 +16,7 @@ export default function Home() {
   const [data, setData] = useState([]);
   const [error, setError] = useState("");
   const [prompt, setPrompt] = useState("");
-
+              
   async function runChat(prompt) {
     try {
       const genAI = new GoogleGenerativeAI(API_KEY);
@@ -84,7 +84,15 @@ export default function Home() {
       await runChat(prompt.trim());
     }
   };
- 
+   const [select,setselect] = useState('Gemini-flash-1.5')
+   const handleSelect = (event) => {
+   setselect(event.target.value);
+   setData((prevData) => [
+    ...prevData,
+    { role: "user", message:`Model changed to ${event.target.value}`},
+    { role: "model", message: "Ok" },
+  ]);
+};
   return (
     <div className="chat-container">
       <div className='box'>
@@ -92,7 +100,14 @@ export default function Home() {
 
         </div>
      <div className='chat'>
-     <div className='chat-1'> 
+      <div className='chat-1'>
+      <div className='Value'>
+         <select onChange={handleSelect}>
+        <option value="Gemini-flash-1.5">Gemini-flash-1.5</option>
+        <option value="Gemini-pro-1.5">Gemini-pro-1.5</option>
+        <option value="Gemini-pro-1">Gemini-pro-1</option>
+      </select></div></div>
+     <div className='chat-2'> 
       <div className="chat-box">
         {/* Chat history */}
         {data.map((entry, index) => (
@@ -100,8 +115,8 @@ export default function Home() {
             <p className="message-text">{entry.message}</p>
           </div>
         ))}
-      </div>
-
+      </div></div>
+      <div className='chat-3'>
       {/* User input at the bottom */}
       <form onSubmit={onSubmit} className="input-container">
         <input 
@@ -125,9 +140,9 @@ export default function Home() {
           <h1>Error</h1>
           <p>{error}</p>
         </div>
-      )}</div>
+      )}
      </div>
-      
+     </div> 
     </div>
   );
 }
