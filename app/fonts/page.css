@@ -14,16 +14,7 @@ width: 100%;
 background-color: #0056b3;
 }
 
-.box{
-  background-color: rgb(202, 249, 234);
-  width: 15%;
-  height:100%;
-  font-weight: 1000;
-  font-size: 20px;
-  display: flex;
-  justify-content: center;
-  
-}
+
 .Bot{
  font-size: 30px; 
 }
@@ -51,6 +42,16 @@ justify-content: end;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+.box{
+  background-color: rgb(202, 249, 234);
+  width: 15%;
+  height:100%;
+  font-weight: 1000;
+  font-size: 20px;
+  display: flex;
+  justify-content:top;
+  
+}
 
 .chat{
   text-align:right;
@@ -65,6 +66,10 @@ justify-content: end;
 .chat-1{
   height: 10% ;
   width: 100%;
+  padding-right: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .chat-2{
   height: 80% ;
@@ -87,12 +92,12 @@ justify-content: end;
 
 .chat-message.user {
   justify-content: flex-end;
-  padding-right: 15px;
+  padding-right: 20px;
 }
 
-.chat-message.model {
+.chat-message.assistant {
   justify-content: flex-start;
-  padding-left: 15px;
+  padding-left: 20px;
  
 }
 
@@ -108,7 +113,7 @@ justify-content: end;
   text-align: right;
 }
 
-.chat-message.model .message-text {
+.chat-message.assistant .message-text {
   background-color:antiquewhite;
   text-align: left;
 }
@@ -156,4 +161,4 @@ justify-content: end;
   color: red;
   font-weight: bold;
   text-align: center;
-}
+} 
