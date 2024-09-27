@@ -11,7 +11,13 @@
   "dependencies": {
     "@ai-sdk/google": "^0.0.48",
     "@google/generative-ai": "^0.19.0",
+    "@prisma/client": "^5.20.0",
+    "ai": "^3.4.1",
+    "dompurify": "^3.1.7",
+    "dotenv": "^16.4.5",
     "google-auth-library": "^9.14.1",
+    "markdown-to-jsx": "^7.5.0",
+    "mysql2": "^3.11.3",
     "next": "14.2.13",
     "react": "^18",
     "react-dom": "^18",
@@ -24,6 +30,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.13",
     "postcss": "^8",
+    "prisma": "^5.20.0",
     "tailwindcss": "^3.4.12",
     "typescript": "^5"
   }
